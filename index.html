@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friends of Brookline Public Health | Championing Health &amp; Equity</title>
+<meta name="description" content="Partnering with the Brookline Department of Public Health to fund local grants, recognize community leaders, and promote health equity through the Brookline Community Foundation.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231C3D5A'/%3E%3Cpath d='M4 16h6l3-9 5 18 3-9h11' fill='none' stroke='%2317A2A0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: { DEFAULT: '#112D4E', dark: '#0F2540', light: '#1F4068' },
+          accent:  { DEFAULT: '#008080', light: '#20B2AA', dark: '#006666' },
+          vibrant: { DEFAULT: '#FF6B6B', light: '#FF8E8E', dark: '#E85A5A' },
+          gold:    { DEFAULT: '#D97706', light: '#F59E0B' },
+          charcoal:{ DEFAULT: '#2D3748', soft: '#4A5568' },
+          canvas:  { DEFAULT: '#F9FBFB', alt: '#E8F1F1', warm: '#FFFDF9' }
+        },
+        fontFamily: {
+          display: ['"Playfair Display"', 'Georgia', 'serif'],
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+        },
+        maxWidth: { '8xl': '90rem' }
+      }
+    }
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+  section[id] { scroll-margin-top: 88px; }
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+
+<body id="top" class="bg-canvas text-charcoal antialiased">
+
+<a href="#main-content" class="fixed left-4 -translate-y-24 focus:translate-y-4 top-0 z-[100] bg-vibrant text-white px-5 py-3 rounded-lg font-semibold transition-transform duration-200">
+  Skip to main content
+</a>
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-accent/10 shadow-sm">
+  <div class="mx-auto max-w-8xl px-6 lg:px-10">
+    <div class="flex items-center justify-between h-22 py-3">
+
+      <a href="#top" class="flex items-center gap-3 group">
+        <img src="https://yourimageshare.com/ib/8ocuwBaaCm.jpg" alt="Friends of Brookline Public Health Logo" class="h-14 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105">
+      </a>
+
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-bold text-primary hover:text-accent transition-colors">About</a>
+        <a href="#initiatives" class="text-sm font-bold text-primary hover:text-accent transition-colors">Initiatives</a>
+        <a href="#donate" class="text-sm font-bold text-primary hover:text-accent transition-colors">Donate</a>
+        <a href="#contact" class="text-sm font-bold text-primary hover:text-accent transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#donate" class="hidden sm:inline-flex items-center justify-center rounded-full bg-vibrant hover:bg-vibrant-dark px-6 py-2.5 text-sm font-extrabold text-white shadow-md transition-all transform hover:-translate-y-0.5">
+          Donate Now
+        </a>
+
+        <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu"
+          class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-full bg-canvas border border-accent/20 text-primary hover:bg-accent/5">
+          <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 17h16"/>
+          </svg>
+          <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-accent/10 bg-white shadow-xl animate-fade-in">
+    <nav aria-label="Mobile" class="flex flex-col px-6 py-4 gap-1">
+      <a href="#about" class="mobile-link py-3 text-base font-bold text-primary hover:text-accent">About</a>
+      <a href="#initiatives" class="mobile-link py-3 text-base font-bold text-primary hover:text-accent">Initiatives</a>
+      <a href="#donate" class="mobile-link py-3 text-base font-bold text-primary hover:text-accent">Donate</a>
+      <a href="#contact" class="mobile-link py-3 text-base font-bold text-primary hover:text-accent">Contact</a>
+      <a href="#donate" class="mobile-link mt-3 inline-flex items-center justify-center rounded-full bg-vibrant px-5 py-3 text-base font-bold text-white shadow">
+        Donate Now
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section aria-labelledby="hero-heading" class="relative overflow-hidden bg-gradient-to-tr from-canvas-alt via-canvas to-white py-16 lg:py-24">
+    <div class="absolute inset-0 bg-[radial-gradient(#008080_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
+    <div class="relative mx-auto max-w-8xl px-6 lg:px-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+        <div class="lg:col-span-6 reveal">
+          <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-xs font-bold uppercase tracking-wider text-accent mb-6">
+            <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+            Brookline, Massachusetts
+          </span>
+          <h1 id="hero-heading" class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-[1.12]">
+            A Constituency for <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary-light">Public Health</span>
+          </h1>
+          <p class="mt-6 text-base sm:text-lg text-charcoal-soft leading-relaxed max-w-xl">
+            For over 22 years, the Friends of Brookline Public Health has driven local action to eliminate racial, gender, and wellness inequities, combat climate impacts, and build a thriving town ecosystem.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="#donate" class="inline-flex items-center justify-center rounded-full bg-accent hover:bg-accent-dark px-7 py-3.5 text-base font-bold text-white shadow-lg transition-all transform hover:-translate-y-0.5">
+              Become a Friend Today
+            </a>
+            <a href="#initiatives" class="inline-flex items-center justify-center rounded-full bg-white border-2 border-primary/20 hover:border-primary px-7 py-3.5 text-base font-bold text-primary shadow-sm transition-all">
+              See What We Do
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 reveal">
+          <div class="grid grid-cols-12 gap-4 items-center">
+            <div class="col-span-7 space-y-4">
+              <div class="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/20 shadow-inner flex flex-col items-center justify-center p-4 text-center group overflow-hidden">
+                <span class="text-xs font-bold text-accent/70 uppercase tracking-wider">Photo Slot A</span>
+                <span class="text-[10px] text-charcoal-soft mt-1">Community Wellness Programs</span>
+              </div>
+              <div class="relative aspect-square rounded-2xl bg-gradient-to-tr from-vibrant/20 to-vibrant/5 border border-vibrant/20 shadow-inner flex flex-col items-center justify-center p-4 text-center group overflow-hidden">
+                <span class="text-xs font-bold text-vibrant/70 uppercase tracking-wider">Photo Slot B</span>
+                <span class="text-[10px] text-charcoal-soft mt-1">Public Health Leaders</span>
+              </div>
+            </div>
+            <div class="col-span-5">
+              <div class="relative aspect-[3/4] rounded-2xl bg-gradient-to-b from-gold/20 to-gold/5 border border-gold/20 shadow-inner flex flex-col items-center justify-center p-4 text-center group overflow-hidden">
+                <span class="text-xs font-bold text-gold/70 uppercase tracking-wider">Photo Slot C</span>
+                <span class="text-[10px] text-charcoal-soft mt-1">Annual Forums</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-heading" class="bg-canvas-warm py-20 border-y border-accent/5">
+    <div class="mx-auto max-w-8xl px-6 lg:px-10">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-vibrant">Our Mission</span>
+        <h2 id="about-heading" class="mt-3 font-display text-3xl sm:text-4xl font-bold text-primary">
+          Fostering Community, Collaboration &amp; Support
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-charcoal-soft leading-relaxed">
+          We bring together the Town of Brookline Department of Public Health and Human Services, health institutions, professionals, and community neighbors to directly target complex local health disparities.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="reveal bg-white p-6 rounded-2xl border border-accent/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-[16/10] rounded-xl bg-canvas border border-dashed border-charcoal/20 mb-5 flex items-center justify-center text-xs text-charcoal-soft font-semibold">
+              Photo Placeholder: Advocacy &amp; Action
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Serve as a Voice</h3>
+            <p class="text-sm text-charcoal-soft leading-relaxed">
+              Acting as a responsive town voice to build public safety networks and significantly mitigate local climate health emergencies.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal bg-white p-6 rounded-2xl border border-accent/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-[16/10] rounded-xl bg-canvas border border-dashed border-charcoal/20 mb-5 flex items-center justify-center text-xs text-charcoal-soft font-semibold">
+              Photo Placeholder: Grant Distribution
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Community Mini Grants</h3>
+            <p class="text-sm text-charcoal-soft leading-relaxed">
+              Providing flexible micro-funding platforms that empower neighborhood residents to quickly build grassroots wellness ideas into active local projects.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal bg-white p-6 rounded-2xl border border-accent/10 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-[16/10] rounded-xl bg-canvas border border-dashed border-charcoal/20 mb-5 flex items-center justify-center text-xs text-charcoal-soft font-semibold">
+              Photo Placeholder: Leadership Networks
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Advance Equity</h3>
+            <p class="text-sm text-charcoal-soft leading-relaxed">
+              Constructing a robust intersectional network designed entirely to remove racial, economic, and identity-driven healthcare access barriers.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-16 bg-white border-2 border-accent/10 rounded-2xl p-8 reveal">
+        <h3 class="font-display text-2xl font-bold text-primary mb-6 text-center">Who We Are — Board of Directors</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-charcoal-soft border-b border-accent/10 pb-6">
+          <div>
+            <span class="block font-bold text-accent text-xs uppercase tracking-wider mb-1">Co-Presidents</span>
+            Richard Segan, MSW, MPH<br>Patricia Maher, MS, MA, APRN
+          </div>
+          <div>
+            <span class="block font-bold text-accent text-xs uppercase tracking-wider mb-1">Public Health Director</span>
+            Sigalle Reiss, MPH
+          </div>
+          <div>
+            <span class="block font-bold text-accent text-xs uppercase tracking-wider mb-1">Ex Officio Leaders</span>
+            Lynne Karsten, MPH &nbsp;•&nbsp; Dai Nguyen, MPH
+          </div>
+        </div>
+        <div class="pt-6">
+          <span class="block font-bold text-accent text-xs uppercase tracking-wider mb-3">Directors at Large</span>
+          <p class="text-xs sm:text-sm text-charcoal-soft leading-relaxed">
+            Jacques Carter, MD, MPH &bull; Chris Chanyasulkit, MPH, PhD &bull; Sharon Gordetsky, PhD &bull; Barbara Hebert &bull; Kitty Kaufman &bull; Julia G. Lee, CPNP, MSN, MPH &bull; Larry Madoff, MD &bull; Peter Moyer, MD, MPH &bull; Rosemarie Roque Gordon, MD, MPH &bull; Gloria Rudisch, MD, MPH
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="initiatives" aria-labelledby="initiatives-heading" class="bg-canvas-alt py-20">
+    <div class="mx-auto max-w-8xl px-6 lg:px-10">
+
+      <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-accent">Core Initiatives</span>
+        <h2 id="initiatives-heading" class="mt-3 font-display text-3xl sm:text-4xl font-bold text-primary">
+          Our Main Pillars of Town Action
+        </h2>
+      </div>
+
+      <div class="space-y-12">
+        
+        <div class="bg-white rounded-3xl border border-accent/10 overflow-hidden shadow-sm grid lg:grid-cols-12 items-center reveal">
+          <div class="lg:col-span-5 bg-gradient-to-br from-accent/10 to-accent/30 aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] flex flex-col items-center justify-center p-6 text-center border-b lg:border-b-0 lg:border-r border-accent/10">
+            <span class="text-sm font-bold text-accent-dark uppercase tracking-wider">Photo Slot: Local Grants</span>
+            <span class="text-xs text-charcoal-soft mt-1">Grassroots Wellness Funding</span>
+          </div>
+          <div class="lg:col-span-7 p-8 sm:p-10">
+            <h3 class="font-display text-2xl font-bold text-primary mb-3">Support Public Health Efforts &amp; Address Needs</h3>
+            <p class="text-sm text-charcoal-soft leading-relaxed">
+              We proactively fund innovative public health program tracks that flatten structural economic gaps, address climate variations, and promote sustainable localized wellness. Small mini-grants are regularly distributed town-wide to launch active ideas.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-accent/10 overflow-hidden shadow-sm grid lg:grid-cols-12 items-center reveal">
+          <div class="lg:col-span-7 p-8 sm:p-10 order-2 lg:order-1">
+            <h3 class="font-display text-2xl font-bold text-primary mb-3">Recognize Public Health Leaders &amp; Programs</h3>
+            <p class="text-sm text-charcoal-soft leading-relaxed mb-4">
+              We preserve long-term systemic excellence by awarding the prestigious **Brookline Public Health Leadership Award** (honoring Alan Balsam) and the **Herb Carlin Community Health Award** to outstanding health forces.
+            </p>
+            <div class="flex flex-wrap gap-2 text-[11px] font-semibold text-accent-dark bg-canvas/60 px-4 py-3 rounded-xl border border-accent/10">
+              <span class="bg-white px-2 py-1 rounded shadow-sm">Michael Dukakis</span>
+              <span class="bg-white px-2 py-1 rounded shadow-sm">Steps to Success</span>
+              <span class="bg-white px-2 py-1 rounded shadow-sm">School Nurses</span>
+              <span class="bg-white px-2 py-1 rounded shadow-sm">Mutual Aid Brookline</span>
+              <span class="bg-white px-2 py-1 rounded shadow-sm">Food Pantry</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5 bg-gradient-to-tr from-gold/10 to-gold/30 aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] flex flex-col items-center justify-center p-6 text-center border-t lg:border-t-0 lg:border-l border-accent/10 order-1 lg:order-2">
+            <span class="text-sm font-bold text-gold uppercase tracking-wider">Photo Slot: Award ceremonies</span>
+            <span class="text-xs text-charcoal-soft mt-1">Celebrating Community Innovation</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-accent/10 overflow-hidden shadow-sm grid lg:grid-cols-12 items-center reveal">
+          <div class="lg:col-span-5 bg-gradient-to-bl from-vibrant/10 to-vibrant/30 aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] flex flex-col items-center justify-center p-6 text-center border-b lg:border-b-0 lg:border-r border-accent/10">
+            <span class="text-sm font-bold text-vibrant/80 uppercase tracking-wider">Photo Slot: Public Forums</span>
+            <span class="text-xs text-charcoal-soft mt-1">Town Educational Initiatives</span>
+          </div>
+          <div class="lg:col-span-7 p-8 sm:p-10">
+            <h3 class="font-display text-2xl font-bold text-primary mb-3">Organize Annual Public Health Forums</h3>
+            <p class="text-sm text-charcoal-soft leading-relaxed">
+              Drawing hundreds of local citizens together, our interactive policy forums offer structural education pathways. Past panel spaces addressed healthcare access realities, prescription pricing barriers, and explicit health advocacy configurations for vulnerable LGBTQ+ town youth.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="donate" aria-labelledby="donate-heading" class="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-accent-dark py-20 text-white">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-5"></div>
+    <div class="relative mx-auto max-w-5xl px-6 lg:px-10 text-center">
+      
+      <div class="max-w-2xl mx-auto reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-vibrant-light">Make a Donation</span>
+        <h2 id="donate-heading" class="mt-3 font-display text-3xl sm:text-4xl font-bold">
+          Become a Friend of Public Health
+        </h2>
+        <div class="mt-4 inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/10 text-xs font-semibold text-vibrant-light">
+          <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          Fiscal Partnership Statement &bull; Brookline Community Foundation
+        </div>
+        <p class="mt-5 text-sm text-white/80 leading-relaxed">
+          The Friends of Brookline Public Health is a community association. By making your contribution through our managed account space held directly at the **Brookline Community Foundation (BCF)**, you immediately become a Friend and fuel community care grants. Your donation is fully tax-deductible through BCF.
+        </p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto reveal">
+        
+        <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 flex flex-col justify-between items-center text-center">
+          <div class="mb-6">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white font-bold text-lg mb-4">1</span>
+            <h3 class="font-display text-xl font-bold mb-2">Secure Online Portal</h3>
+            <p class="text-xs text-white/70 leading-relaxed">
+              Process your transaction safely via the Brookline Community Foundation online checkout network setup for the Friends allocation.
+            </p>
+          </div>
+          <a href="https://brookline.fcsuite.com/erp/donate/create/fund?funit_id=1402" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center rounded-full bg-vibrant hover:bg-vibrant-dark px-6 py-3.5 font-bold text-white shadow-lg transition-transform transform hover:-translate-y-0.5">
+            Donate Directly Online →
+          </a>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 flex flex-col justify-between text-left">
+          <div class="mb-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-vibrant-light font-bold text-sm">2</span>
+              <h3 class="font-display text-lg font-bold">Mail a Check</h3>
+            </div>
+            <p class="text-xs text-white/70 leading-relaxed">
+              Please make checks payable directly to the <strong class="text-white">Brookline Community Foundation</strong>. You must write <em class="text-vibrant-light not-italic font-bold">"Friends of Brookline Public Health"</em> explicitly on the memo line block to route your contribution properly.
+            </p>
+          </div>
+          
+          <div class="bg-black/20 p-4 rounded-xl text-xs space-y-1 text-white/90 border border-white/5 font-mono">
+            <span class="block font-bold text-accent-light tracking-wider uppercase text-[10px] text-accent-light mb-1">Mailing Address:</span>
+            <span class="block">Brookline Community Foundation</span>
+            <span class="block">40 Webster Place</span>
+            <span class="block">Brookline, MA 02445-7937</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-heading" class="bg-canvas py-20">
+    <div class="mx-auto max-w-8xl px-6 lg:px-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+        <div class="lg:col-span-5 reveal">
+          <span class="text-xs font-bold uppercase tracking-widest text-accent">Contact Us</span>
+          <h2 id="contact-heading" class="mt-3 font-display text-3xl sm:text-4xl font-bold text-primary">
+            Interested in Joining Us?
+          </h2>
+          <p class="mt-4 text-sm text-charcoal-soft leading-relaxed">
+            Friends would love to have your presence, your local strategy suggestions, and your voice. Get in touch directly using our town inbox configuration or write via email.
+          </p>
+
+          <div class="mt-6 p-4 rounded-xl bg-accent/5 border border-accent/10 inline-flex items-center gap-3">
+            <div class="h-9 w-9 rounded-lg bg-accent text-white flex items-center justify-center shrink-0">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <span class="block text-[10px] font-bold text-charcoal-soft uppercase tracking-wider">Direct Email Address</span>
+              <a href="mailto:brookline.fph@gmail.com" class="text-sm font-bold text-accent hover:underline">brookline.fph@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 reveal bg-white p-6 sm:p-8 rounded-2xl border border-accent/10 shadow-sm">
+          <form action="#" method="POST" class="space-y-4" onsubmit="event.preventDefault(); alert('Inquiry logged into the Friends inbox platform. Thank you for your support!');">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-charcoal uppercase mb-2">Your Name</label>
+                <input type="text" required class="w-full bg-canvas border border-accent/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-charcoal uppercase mb-2">Email Address</label>
+                <input type="email" required class="w-full bg-canvas border border-accent/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-charcoal uppercase mb-2">Message</label>
+              <textarea rows="3" required class="w-full bg-canvas border border-accent/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent" placeholder="How can we help you or how would you like to collaborate?"></textarea>
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center rounded-xl bg-primary hover:bg-primary-dark px-6 py-3.5 text-sm font-bold text-white shadow transition-all">
+              Send to Inbox
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-primary-dark text-white/50 text-xs py-10 border-t border-white/5">
+  <div class="mx-auto max-w-8xl px-6 lg:px-10 flex flex-col sm:flex-row justify-between items-center gap-6">
+    
+    <div class="text-center sm:text-left">
+      <p class="font-display text-sm font-bold text-white mb-1">Friends of Brookline Public Health</p>
+      <p>&copy; 2026 Friends of Brookline Public Health &bull; Managed Fund of the Brookline Community Foundation.</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 font-semibold">
+      <a href="#about" class="hover:text-white transition-colors">About</a>
+      <a href="#initiatives" class="hover:text-white transition-colors">Initiatives</a>
+      <a href="#donate" class="hover:text-white transition-colors">Donate</a>
+      <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Mobile Nav Drawer Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('icon-open');
+  const closeIcon = document.getElementById('icon-close');
+
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('hidden');
+    openIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      openIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Intersection Observer for Smooth Section Animations
+  const elementsToReveal = document.querySelectorAll('.reveal');
+  const observerConfig = { threshold: 0.05, rootMargin: '0px 0px -20px 0px' };
+
+  const scrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerConfig);
+
+  elementsToReveal.forEach(element => scrollObserver.observe(element));
+</script>
+
+</body>
+</html>
