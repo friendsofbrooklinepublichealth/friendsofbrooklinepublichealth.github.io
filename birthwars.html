@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Friends of Brookline Public Health: Birth Wars Screening and Panel</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-navy: #223859;
+      --hover-navy: #172840;
+      --bg-light-blue: #EFF5F9;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-light-blue);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(34, 56, 89, 0.03);
+    }
+
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      text-decoration: none;
+    }
+
+    .brand-logo span {
+      font-weight: 400;
+      font-style: italic;
+      text-transform: capitalize;
+    }
+
+    .header-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      line-height: 1.4;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--hover-navy);
+      border-color: var(--hover-navy);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(23, 40, 64, 0.15);
+    }
+
+    .btn-outline {
+      background-color: #FFFFFF;
+      color: var(--primary-navy);
+      border-color: var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background-color: #F8FAFC;
+      border-color: var(--primary-navy);
+      color: var(--hover-navy);
+      transform: translateY(-1px);
+    }
+
+    .btn-page {
+      padding: 0.5rem 0.85rem;
+      font-size: 0.875rem;
+      min-width: 2.5rem;
+    }
+
+    .btn:disabled, .btn[disabled] {
+      opacity: 0.45;
+      cursor: not-allowed;
+      pointer-events: none;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .hero {
+      padding: 4.5rem 1.5rem 3rem;
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 6px rgba(34, 56, 89, 0.04);
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-meta {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .backup-section {
+      max-width: 1000px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .backup-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary-navy);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      box-shadow: 0 4px 20px rgba(34, 56, 89, 0.04);
+    }
+
+    .backup-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-light-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-navy);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .backup-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+
+    .backup-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .backup-content p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .gallery-section {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem;
+    }
+
+    .gallery-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .gallery-count {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .gallery-quick-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .photo-grid {
+      column-count: 3;
+      column-gap: 1.5rem;
+    }
+
+    @media (max-width: 980px) {
+      .photo-grid {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .photo-grid {
+        column-count: 1;
+      }
+    }
+
+    .photo-card {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(34, 56, 89, 0.05);
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+      min-height: 240px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(34, 56, 89, 0.12);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(34, 56, 89, 0) 60%, rgba(34, 56, 89, 0.7) 100%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      pointer-events: none;
+    }
+
+    .photo-card:hover .photo-overlay {
+      opacity: 1;
+    }
+
+    .photo-number {
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .photo-view-icon {
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.825rem;
+      font-weight: 500;
+    }
+
+    .pagination-container {
+      margin-top: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .pagination-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pagination-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .connect-section {
+      max-width: 1000px;
+      margin: 0 auto 4.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .connect-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(34, 56, 89, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .connect-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-light-blue);
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .connect-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .connect-card p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      max-width: 380px;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      color: #FFFFFF;
+      z-index: 10;
+    }
+
+    .lightbox-counter {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #CBD5E1;
+    }
+
+    .lightbox-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lightbox-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .lightbox-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+    }
+
+    .lightbox-close {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .lightbox-body {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 4rem;
+      overflow: hidden;
+    }
+
+    .lightbox-image-wrap {
+      max-width: 100%;
+      max-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      user-select: none;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .lightbox-nav.prev { left: 1.5rem; }
+    .lightbox-nav.next { right: 1.5rem; }
+
+    .lightbox-footer {
+      padding: 1rem 2rem;
+      text-align: center;
+      color: #94A3B8;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--primary-navy);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      stroke-width: 2;
+      stroke: currentColor;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <span class="brand-logo" style="text-transform: none; letter-spacing: -0.01em;">Friends of Brookline Public Health: Birth Wars Screening and Panel</span>
+      <a href="https://drive.google.com/drive/folders/1e7U_CFKqMvdb7HHInYnaiXIOJnwfbga-" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-page">Open Drive Folder</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    
+    <h1>Friends of Brookline Public Health: Birth Wars Screening and Panel</h1>
+    
+    <div class="hero-actions">
+      <a href="https://drive.google.com/drive/folders/1e7U_CFKqMvdb7HHInYnaiXIOJnwfbga-" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+        Open Drive Folder
+      </a>
+    </div>
+  </section>
+
+
+
+  <main class="gallery-section" id="galleryTop">
+    <div class="gallery-header-bar">
+      <div class="gallery-count" id="galleryCount">Showing photos 1 to 25 of 25</div>
+      <div class="gallery-quick-actions">
+        <button class="btn btn-outline btn-page" id="scrollTopBtn" onclick="scrollToTop()">Top &uarr;</button>
+      </div>
+    </div>
+
+    <div class="photo-grid" id="photoGrid"></div>
+
+    <div class="pagination-container" id="paginationContainer">
+      <div class="pagination-controls" id="paginationControls"></div>
+      <div class="pagination-info" id="paginationInfo">Page 1 of 1</div>
+    </div>
+  </main>
+
+
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-header">
+      <div class="lightbox-counter" id="lightboxCounter">Photo 1 of 25</div>
+      <div class="lightbox-actions">
+        <a href="#" class="lightbox-btn" id="lightboxDownloadBtn" download>
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Original
+        </a>
+        <button class="lightbox-close" onclick="closeLightbox()" title="Close (Esc)">
+          <svg class="icon" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="lightbox-body">
+      <button class="lightbox-nav prev" onclick="prevPhoto()" title="Previous (Left Arrow)">
+        <svg class="icon" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="lightbox-image-wrap">
+        <img src="" alt="" class="lightbox-image" id="lightboxImage" referrerpolicy="no-referrer">
+      </div>
+
+      <button class="lightbox-nav next" onclick="nextPhoto()" title="Next (Right Arrow)">
+        <svg class="icon" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="lightbox-footer">
+      Use left and right arrow keys to navigate, Esc to close
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">Friends of Brookline Public Health: Birth Wars Screening and Panel</div>
+      <div class="footer-links">
+        <a href="https://drive.google.com/drive/folders/1e7U_CFKqMvdb7HHInYnaiXIOJnwfbga-" target="_blank" rel="noopener noreferrer">Open Drive Folder</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const RAW_DATA = [["1EYuJ2DLmY8dgfs8ftdESSNqMEn6dY_JT", "P27A9051-2.jpg", "1"], ["1CSeDHyXpn8JSgQCRHpSwHTo_PPj2FsnC", "P27A8854.jpg", "2"], ["1p6kFWKDZRxW8MHK6vUBXo2xmFhHmAril", "P27A8855.jpg", "3"], ["1d0nqMw--pKjLgHFEbMCyesptNXXq8NTF", "P27A8857.jpg", "4"], ["1O5j4KnU1G0s6i85gvg0YzIrEECOTlPnS", "P27A8870.jpg", "5"], ["174I9P3aQG5Cd_0opRKp1xRH6C3dweOrQ", "P27A8877.jpg", "6"], ["1qzgi4PQzz3TDLhEi2dEOgfEvkEq2QTD2", "P27A8880.jpg", "7"], ["1mceacZKdPJsqRhc4TqI27SAXLlDQUisZ", "P27A8885.jpg", "8"], ["10QygPA4N1yaI405BcezqPn_3w0zANCA6", "P27A8888.jpg", "9"], ["1InYDv1VbfmO4JHmtUYPBy8szJUbUWgPZ", "P27A8914.jpg", "10"], ["1iahUpxQcDg2O5CM_4w606QsAKRR6rCEy", "P27A8934.jpg", "11"], ["1dVmF2Loq2INhE0QdF_HdbMLmI5aJhSJI", "P27A8964.jpg", "12"], ["1Sr7cs9JxFHi2vBibvro0JRPP47UtnAd2", "P27A8968.jpg", "13"], ["1WVM0OuH6SL9wned6aIRSvz8Bhct3ci96", "P27A8983.jpg", "14"], ["19_eybLEzuQTsh2M-blzlYBL2KnUneAFi", "P27A8989.jpg", "15"], ["1-O1hXBgzpypsB-TLetyB-eBP7a7Pddnh", "P27A9002.jpg", "16"], ["1oqHphWAj4tZ0RkGYVGwoABn3NTYntjF8", "P27A9023.jpg", "17"], ["1Dorq4ci0_PRfyO_AmToww-bmpiXMbusu", "P27A9026.jpg", "18"], ["1UmXzzpq9fljobi-TB-9Gga2iERA0M_53", "P27A9037.jpg", "19"], ["1xU6M7RoXADtcZsd7IMb8GJS9we_sFsXh", "P27A9069.jpg", "20"], ["1V6mn48VwPaWyk6Zk-KwEd_uetZxF16Kh", "P27A9075.jpg", "21"], ["1TIvO22nZMREruoN-sUZG5a7fbpbCnRan", "P27A9107.jpg", "22"], ["1HSj-h4LsL2Lcibv78tmZoOqwD9tadf3n", "P27A9113.jpg", "23"], ["1TN_rgzTUrQCyjPoEmG3fhH9xvM6S13in", "P27A9123.jpg", "24"], ["10-rOCwkRkkBHoegN5ndj59GhYKpgVUSC", "P27A9140.jpg", "25"]];
+
+    const PHOTOS = RAW_DATA.map(([id, title, indexStr]) => ({
+      id: id,
+      title: title,
+      index: indexStr
+    }));
+
+    const PHOTOS_PER_PAGE = 30;
+    const TOTAL_PHOTOS = PHOTOS.length;
+    const TOTAL_PAGES = Math.max(1, Math.ceil(TOTAL_PHOTOS / PHOTOS_PER_PAGE));
+    let currentPage = 1;
+    let currentLightboxIndex = 0;
+
+    function getThumbnailUrl(id, step = 0) {
+      const sources = [
+        `https://drive.google.com/thumbnail?id=${id}&sz=w1000`,
+        `https://lh3.googleusercontent.com/d/${id}=w800`,
+        `https://drive.google.com/uc?export=view&id=${id}`,
+        `https://lh3.googleusercontent.com/d/${id}`,
+        `https://lh3.google.com/u/0/d/${id}`
+      ];
+      return sources[step] || sources[0];
+    }
+
+    function getHiResUrl(id, step = 0) {
+      const sources = [
+        `https://drive.google.com/thumbnail?id=${id}&sz=w2400`,
+        `https://lh3.googleusercontent.com/d/${id}=w2400`,
+        `https://drive.google.com/uc?export=view&id=${id}`,
+        `https://lh3.googleusercontent.com/d/${id}`,
+        `https://lh3.google.com/u/0/d/${id}`
+      ];
+      return sources[step] || sources[0];
+    }
+
+    function handleCardImgError(img, photoId) {
+      let step = parseInt(img.dataset.step || '0', 10) + 1;
+      const maxSteps = 5;
+      if (step < maxSteps) {
+        img.dataset.step = step.toString();
+        img.src = getThumbnailUrl(photoId, step);
+      }
+    }
+
+    function handleLightboxImgError(img, photoId) {
+      let step = parseInt(img.dataset.step || '0', 10) + 1;
+      const maxSteps = 5;
+      if (step < maxSteps) {
+        img.dataset.step = step.toString();
+        img.src = getHiResUrl(photoId, step);
+      }
+    }
+
+    function renderPage(page) {
+      currentPage = page;
+      const startIndex = (page - 1) * PHOTOS_PER_PAGE;
+      const endIndex = Math.min(startIndex + PHOTOS_PER_PAGE, TOTAL_PHOTOS);
+      const currentPhotos = PHOTOS.slice(startIndex, endIndex);
+
+      const grid = document.getElementById('photoGrid');
+      grid.innerHTML = '';
+
+      currentPhotos.forEach((photo, idx) => {
+        const globalIndex = startIndex + idx;
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        card.onclick = () => openLightbox(globalIndex);
+
+        const initialSrc = getThumbnailUrl(photo.id, 0);
+
+        card.innerHTML = `
+          <img
+            src="${initialSrc}"
+            alt="${photo.title}"
+            referrerpolicy="no-referrer"
+            data-step="0"
+            onerror="handleCardImgError(this, '${photo.id}')"
+          >
+          <div class="photo-overlay">
+            <span class="photo-number">Photo ${photo.index}</span>
+            <span class="photo-view-icon">
+              <svg class="icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Enlarge
+            </span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      const countEl = document.getElementById('galleryCount');
+      if (TOTAL_PHOTOS === 0) {
+        countEl.textContent = 'No photographs found';
+      } else if (TOTAL_PAGES === 1) {
+        countEl.textContent = `Showing all ${TOTAL_PHOTOS} photographs`;
+      } else {
+        countEl.textContent = `Showing photos ${startIndex + 1} to ${endIndex} of ${TOTAL_PHOTOS}`;
+      }
+
+      const paginationContainer = document.getElementById('paginationContainer');
+      if (TOTAL_PAGES <= 1) {
+        paginationContainer.style.display = 'none';
+      } else {
+        paginationContainer.style.display = 'flex';
+        document.getElementById('paginationInfo').textContent = `Page ${currentPage} of ${TOTAL_PAGES}`;
+        renderPaginationControls();
+      }
+    }
+
+    function renderPaginationControls() {
+      const container = document.getElementById('paginationControls');
+      container.innerHTML = '';
+
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'btn btn-outline btn-page';
+      prevBtn.textContent = 'Previous';
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.onclick = () => goToPage(currentPage - 1);
+      container.appendChild(prevBtn);
+
+      for (let i = 1; i <= TOTAL_PAGES; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.className = (i === currentPage) ? 'btn btn-primary btn-page' : 'btn btn-outline btn-page';
+        pageBtn.textContent = i;
+        pageBtn.onclick = () => goToPage(i);
+        container.appendChild(pageBtn);
+      }
+
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'btn btn-outline btn-page';
+      nextBtn.textContent = 'Next';
+      nextBtn.disabled = currentPage === TOTAL_PAGES;
+      nextBtn.onclick = () => goToPage(currentPage + 1);
+      container.appendChild(nextBtn);
+    }
+
+    function goToPage(page) {
+      if (page < 1 || page > TOTAL_PAGES || page === currentPage) return;
+      renderPage(page);
+      scrollToTop();
+    }
+
+    function scrollToTop() {
+      const el = document.getElementById('galleryTop');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function openLightbox(index) {
+      if (TOTAL_PHOTOS === 0) return;
+      currentLightboxIndex = index;
+      updateLightboxContent();
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+      const photo = PHOTOS[currentLightboxIndex];
+      const img = document.getElementById('lightboxImage');
+      const counter = document.getElementById('lightboxCounter');
+      const downloadBtn = document.getElementById('lightboxDownloadBtn');
+
+      counter.textContent = `Photo ${photo.index} (${currentLightboxIndex + 1} of ${TOTAL_PHOTOS})`;
+      downloadBtn.href = `https://drive.google.com/uc?export=download&id=${photo.id}`;
+
+      img.dataset.step = '0';
+      img.src = getHiResUrl(photo.id, 0);
+      img.onerror = () => handleLightboxImgError(img, photo.id);
+      img.alt = photo.title;
+    }
+
+    function nextPhoto() {
+      currentLightboxIndex = (currentLightboxIndex + 1) % TOTAL_PHOTOS;
+      updateLightboxContent();
+    }
+
+    function prevPhoto() {
+      currentLightboxIndex = (currentLightboxIndex - 1 + TOTAL_PHOTOS) % TOTAL_PHOTOS;
+      updateLightboxContent();
+    }
+
+    window.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        nextPhoto();
+      } else if (e.key === 'ArrowLeft') {
+        prevPhoto();
+      }
+    });
+
+    // Initial render: execute immediately if DOM is ready, or on DOMContentLoaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => renderPage(1));
+    } else {
+      renderPage(1);
+    }
+  </script>
+</body>
+</html>
